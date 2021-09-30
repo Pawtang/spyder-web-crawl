@@ -4,7 +4,7 @@ import requests
 #For names:
 import nltk
 import os
-nltk.download('popular')
+#nltk.download('popular')
 from nltk.tag.stanford import StanfordNERTagger
 #-----------------------------------------------------------------------
 
@@ -24,13 +24,14 @@ for item in soup.select('.story-wrapper'):
 		#raise e
 		print('')
 
-print(headlines)
+for headline in headlines:
+    print(headline)
 
 #Identify names:
 names = []
 
-st = StanfordNERTagger('/Users/mahendrabilagi/Desktop/stanford-ner-2017-06-09/classifiers/english.all.3class.distsim.crf.ser.gz',
-           '/Users/mahendrabilagi/Desktop/stanford-ner-2017-06-09/stanford-ner.jar')
+st = StanfordNERTagger(r'C:\Users\bendi\AppData\Roaming\nltk_data\stanford-ner-2020-11-17\classifiers\english.all.3class.distsim.prop',
+           r'C:\Users\bendi\AppData\Roaming\nltk_data\stanford-ner-2020-11-17.jar')
 
 for i in headlines:
     text = headlines[i]
